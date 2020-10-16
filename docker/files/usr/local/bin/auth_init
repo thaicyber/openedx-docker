@@ -1,23 +1,21 @@
 #!/usr/bin/env python
-
 from os import environ
 
 import django
 
 django.setup()
 
-from django.contrib.auth.models import User
-from django.contrib.sites.models import Site
-from django.core.exceptions import ImproperlyConfigured
-
 from student.models import UserProfile
-
+from django.core.exceptions import ImproperlyConfigured
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import User
 
 # Create a normal user
 try:
     edx = User.objects.get(username="edx")
 except User.DoesNotExist:
-    edx = User.objects.create(username="edx", email="edx@example.com", is_active=True)
+    edx = User.objects.create(
+        username="edx", email="edx@example.com", is_active=True)
     edx.set_password("edx")
     edx.save()
     UserProfile.objects.create(user=edx)
@@ -68,8 +66,8 @@ except ImportError:
         "client_type": CONFIDENTIAL,
         "client_secret": "fakesecret",
         "name": "Test SSO",
-        "redirect_uri": "http://localhost:8070/oauth/complete/edx-oidc/",
-        "url": "localhost:8070",
+        "redirect_uri": "http://richie.local.dev:8070/oauth/complete/edx-oidc/",
+        "url": "richie.local.dev:8070",
         "user": admin,
     }
 
@@ -90,7 +88,7 @@ else:
         "client_type": Application.CLIENT_CONFIDENTIAL,
         "client_secret": "fakesecret",
         "name": "Test SSO",
-        "redirect_uris": "http://localhost:8070/oauth/complete/edx-oauth2/",
+        "redirect_uris": "http://richie.local.dev:8070/oauth/complete/edx-oauth2/",
         "skip_authorization": True,
         "user": admin,
     }
