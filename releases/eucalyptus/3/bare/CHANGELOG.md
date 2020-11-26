@@ -9,6 +9,10 @@ release.
 
 ## [Unreleased]
 
+### Added
+
+- Enable mobile rest api if CORS requests are allowed
+
 ## [eucalyptus.3-1.2.0] - 2020-05-14
 
 ### Added

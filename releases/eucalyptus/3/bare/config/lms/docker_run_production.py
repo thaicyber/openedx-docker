@@ -613,6 +613,10 @@ if FEATURES.get("ENABLE_CORS_HEADERS") or FEATURES.get(
     # the client won't be able to read the cookie.
     CROSS_DOMAIN_CSRF_COOKIE_DOMAIN = config("CROSS_DOMAIN_CSRF_COOKIE_DOMAIN")
 
+    # Enable ENABLE_MOBILE_REST_API to retrieve user_info from 
+    # a third party application
+    FEATURES["ENABLE_MOBILE_REST_API"] = True
+
 
 # Field overrides. To use the IDDE feature, add
 # 'courseware.student_field_overrides.IndividualStudentOverrideProvider'.
