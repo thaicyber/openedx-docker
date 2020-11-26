@@ -9,6 +9,14 @@ release.
 
 ## [Unreleased]
 
+### Added
+
+- Add new `PLATFORM_RICHIE_URL` setting in lms config used by fun-apps
+
+### Changed
+
+- Enable CORS requests
+
 ## [dogwood.3-fun-1.15.2] - 2020-11-10
 
 ### Fixed
